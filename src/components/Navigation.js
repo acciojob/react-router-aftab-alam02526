@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function Navigation() {
+function Navigation({ setPage }) {
   return (
     <nav>
       <ul style={{ display: "flex", gap: "10px", listStyle: "none" }}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li>
+          <button onClick={() => setPage("home")}>Home</button>
+        </li>
+        <li>
+          <button onClick={() => setPage("about")}>About</button>
+        </li>
       </ul>
     </nav>
   );
