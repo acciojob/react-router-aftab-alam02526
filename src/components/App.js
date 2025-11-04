@@ -1,14 +1,13 @@
 
-import './../styles/App.css';
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Navigation from "./Navigation";
 
 function App() {
   return (
-    <HashRouter>
+    <MemoryRouter>
       <div>
         <Navigation />
         <Routes>
@@ -16,9 +15,10 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
-    </HashRouter>
+    </MemoryRouter>
   );
 }
 
 export default App;
+
 
