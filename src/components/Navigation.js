@@ -1,16 +1,16 @@
 import React from "react";
 
-function Navigation({ setPage }) {
+function Navigation({ onNavigate }) {
+  const handleClick = (e, path) => {
+    e.preventDefault();
+    onNavigate(path);
+  };
+
   return (
     <nav>
-      <ul style={{ display: "flex", gap: "10px", listStyle: "none" }}>
-        <li>
-          <button onClick={() => setPage("home")}>Home</button>
-        </li>
-        <li>
-          <button onClick={() => setPage("about")}>About</button>
-        </li>
-      </ul>
+      <a href="/" onClick={(e) => handleClick(e, "/")}>Home</a>
+      {" | "}
+      <a href="/about" onClick={(e) => handleClick(e, "/about")}>About</a>
     </nav>
   );
 }
